@@ -11,7 +11,9 @@ const style = {
     overflow: 'hidden',
     verticalAlign: 'middle',
     outline: 'none',
-    fontSize: '100%'
+    fontSize: '100%',
+    'max-width': 'max(0px, calc((100% - 120px)*999))',
+    overflow: 'hidden'
   },
   list: {
     paddingLeft: 30
@@ -102,7 +104,7 @@ const LinkList = ({
 }) => {
   return (
     <div>
-      <div className="r" style={style.titleContainer}>
+      <div id="listTitle" className="r" style={style.titleContainer}>
         <div style={style.quick}>
           <span
             className="glyph info"
@@ -113,11 +115,10 @@ const LinkList = ({
         </div>
         <div
           className="n0"
-          style={{textDecoration: 'underline'}}
           title="Add Quick Link"
           onClick={event => onAdd(event)}
         >
-          Add Quick Link
+        ➕
         </div>
       </div>
 

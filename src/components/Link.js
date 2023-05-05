@@ -22,7 +22,6 @@ const Link = ({
   return (
     <div>
       <a
-        style={{textDecoration: 'underline'}}
         className="n0"
         title={urlHash}
         href={urlHash}
