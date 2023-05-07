@@ -12,8 +12,7 @@ const style = {
     verticalAlign: 'middle',
     outline: 'none',
     fontSize: '100%',
-    'max-width': 'max(0px, calc((100% - 120px)*999))',
-    overflow: 'hidden'
+    maxWidth: 'max(0px, calc((100% - 120px)*999))'
   },
   list: {
     paddingLeft: 30

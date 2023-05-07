@@ -83,7 +83,10 @@ class AppContainer extends React.Component {
     //are we in collapsed gmail sidebar?
     //also check that we are compatible with simplify (https://github.com/leggett/simplify)
     //because simplify changes the width to zero
-    if (gmailSideBar().offsetWidth == 72 || gmailSideBar().offsetWidth == 0) {
+    const sideBar = gmailSideBar()
+    if (sideBar == null) return
+
+    if (sideBar.offsetWidth == 72 || sideBar.offsetWidth == 0) {
       //immediately hide it
       quickLinksContainer().style.display = 'none'
     }
