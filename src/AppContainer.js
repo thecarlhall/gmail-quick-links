@@ -124,14 +124,12 @@ class AppContainer extends React.Component {
   render() {
     const {linkList, accountList} = this.state
     const {accountName, location} = this.props
-
-    const moreProps = {
-      className: location === 'widget' ? 'py' : ''
-    }
+    const className = location === 'widget' ? 'py' : ''
 
     return (
-      <div id={GMAIL_QUICK_LINKS_NAME.divId} {...moreProps}>
         <LinkList
+          id={GMAIL_QUICK_LINKS_NAME.divId}
+          className={className}
           linkList={linkList}
           accountList={accountList[accountName]}
           onAdd={this.onAdd}
@@ -154,7 +152,6 @@ class AppContainer extends React.Component {
             toggleLink(type, name, accountName)
           }}
         />
-      </div>
     )
   }
 }

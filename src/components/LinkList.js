@@ -1,29 +1,6 @@
 import React from 'react'
 import Link from './Link'
 
-const style = {
-  small: {
-    fontSize: '80%'
-  },
-  quick: {
-    cursor: 'auto',
-    position: 'relative',
-    overflow: 'hidden',
-    verticalAlign: 'middle',
-    outline: 'none',
-    fontSize: '100%',
-    maxWidth: 'max(0px, calc((100% - 120px)*999))'
-  },
-  list: {
-    paddingLeft: 30
-  },
-  titleContainer: {
-    display: 'flex',
-    alignItems: 'baseline',
-    justifyContent: 'space-between'
-  }
-}
-
 const renderList = linkList => accountList => onDelete => onRename => onClickGlobeCircle => {
   const _onDelete = (type, key) => () => onDelete(type, key)
   const _onRename = (type, key) => () => onRename(type, key)
@@ -94,6 +71,8 @@ If you do not have multiple gmail accounts, toggling between the yellow sphere a
 }
 
 const LinkList = ({
+  id,
+  className,
   linkList = {},
   accountList = {},
   onAdd,
@@ -102,9 +81,9 @@ const LinkList = ({
   onClickGlobeCircle
 }) => {
   return (
-    <div>
-      <div id="listTitle" className="r" style={style.titleContainer}>
-        <div style={style.quick}>
+    <div id={id} className={className}>
+      <div className="r titleContainer">
+        <div>
           <span
             className="glyph info"
             title="info/help"
@@ -121,10 +100,8 @@ const LinkList = ({
         </div>
       </div>
 
-      <div id="listContainer" style={{paddingBottom: '10px'}}>
-        <div style={style.list}>
+      <div className="listContainer">
           {renderList(linkList)(accountList)(onDelete)(onRename)(onClickGlobeCircle)}
-        </div>
       </div>
     </div>
   )
