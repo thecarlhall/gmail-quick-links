@@ -20,7 +20,7 @@ const Link = ({
   onClickGlobeCircle
 }) => {
   return (
-    <div>
+    <div className="listItem">
       <a
         className="n0"
         title={urlHash}
@@ -28,18 +28,20 @@ const Link = ({
       >
         {name}
       </a>
-      <span
-        className="glyph delete"
-        title="delete"
-        onClick={event => onDelete()}
-      />
-      <span
-        className="glyph rename"
-        title="rename"
-        onClick={event => onRename()}
-      />
-      {renderGlobeCircle(type)(onClickGlobeCircle)}
-      <div className="clear" />
+      <div className="itemActions">
+        <span
+          className="glyph delete"
+          title="delete"
+          onClick={event => onDelete()}
+        />
+        <span
+          className="glyph rename"
+          title="rename"
+          onClick={event => onRename()}
+        />
+        {renderGlobeCircle(type)(onClickGlobeCircle)}
+        <div className="clear" />
+      </div>
     </div>
   )
 }

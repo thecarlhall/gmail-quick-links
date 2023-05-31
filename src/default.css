@@ -1,15 +1,25 @@
-#listContainer div div span.glyph {
+span.glyph {
   display: block;
   width: 16px;
   height: 16px;
 	opacity: 0;
 }
 
-#listContainer div div:hover span.glyph {
-	opacity: 0.7;
+.itemActions {
+  display: hidden;
+  position: absolute;
+  right: 0;
 }
 
-#listContainer div div:hover span.glyph:hover {
+.listItem:hover .itemActions {
+  display:inline-block;
+}
+
+.listItem:hover .glyph {
+	opacity: 0.6;
+}
+
+.listItem:hover .glyph:hover {
 	opacity: 1;
 }
 
